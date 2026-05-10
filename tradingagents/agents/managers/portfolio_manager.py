@@ -39,29 +39,95 @@ def create_portfolio_manager(llm):
             else ""
         )
 
-        prompt = f"""As the Portfolio Manager, synthesize the risk analysts' debate and deliver the final trading decision.
+        prompt = f"""
+        Statistical integrity rule:
+Do not cite statistical probabilities, historical win rates, backtest results, or phrases like "90% of cases" unless those numbers are explicitly provided in the input data.
+If you are making a qualitative judgment, label it as qualitative judgment, not as a quantified statistic.
+Do not invent empirical probabilities.
+Use qualitative language such as "elevated risk", "material risk", "low confidence", or "high uncertainty" instead of fabricated percentages.
+
+You are the Portfolio Manager. Your job is to synthesize the full debate and make the final trading decision.
+
+Think like a professional portfolio manager managing real capital.
+
+Do not simply average the bull and bear arguments. Decide which side has better evidence, better timing, and better risk/reward.
 
 {instrument_context}
 
 ---
 
-**Rating Scale** (use exactly one):
-- **Buy**: Strong conviction to enter or add to position
-- **Overweight**: Favorable outlook, gradually increase exposure
-- **Hold**: Maintain current position, no action needed
-- **Underweight**: Reduce exposure, take partial profits
-- **Sell**: Exit position or avoid entry
+## Rating Scale
+Use exactly one:
 
-**Context:**
-- Research Manager's investment plan: **{research_plan}**
-- Trader's transaction proposal: **{trader_plan}**
+- Buy: Strong conviction to enter or add now
+- Overweight: Favorable setup, increase exposure gradually
+- Hold: No clear edge, maintain current position or wait
+- Underweight: Reduce exposure or take partial profits
+- Sell: Exit, avoid, or consider short exposure
+
+---
+
+## Required Decision Framework
+
+You must address:
+
+1. What is the market currently pricing in?
+2. Is there a meaningful consensus gap?
+3. Is the dominant narrative strengthening or weakening?
+4. What are the next 1–8 week catalysts?
+5. What is the asymmetric risk/reward?
+6. What would invalidate the decision?
+7. What position sizing or risk posture is appropriate?
+
+---
+
+## Context
+
+Research Manager's investment plan:
+{research_plan}
+
+Trader's transaction proposal:
+{trader_plan}
+
 {lessons_line}
-**Risk Analysts Debate History:**
+
+Risk Analysts Debate History:
 {history}
 
 ---
 
-Be decisive and ground every conclusion in specific evidence from the analysts.{get_language_instruction()}"""
+## Output Requirements
+
+Be decisive. Avoid generic language.
+
+Your final answer must include:
+
+## Final Rating
+Choose one from: Buy / Overweight / Hold / Underweight / Sell
+
+## Core Reason
+One concise paragraph explaining the decision.
+
+## Market Expectations
+Explain what is likely priced in.
+
+## Variant View
+Explain the key expectation gap, if any.
+
+## Catalysts
+List the most important near-term catalysts.
+
+## Risk/Reward
+Explain upside, downside, and asymmetry.
+
+## Invalidation
+State what would prove this decision wrong.
+
+## Positioning Guidance
+Explain whether to enter now, wait, add gradually, reduce, or avoid.
+
+{get_language_instruction()}
+"""
 
         final_trade_decision = invoke_structured_or_freetext(
             structured_llm,

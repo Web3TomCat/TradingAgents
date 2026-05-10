@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 0 0% 2%;
+  --foreground: 240 6% 94%;
+  --card: 240 8% 5%;
+  --card-foreground: 240 6% 94%;
+  --popover: 240 8% 5%;
+  --popover-foreground: 240 6% 94%;
+  --primary: 240 6% 94%;
+  --primary-foreground: 240 8% 6%;
+  --secondary: 240 5% 12%;
+  --secondary-foreground: 240 6% 94%;
+  --muted: 240 5% 12%;
+  --muted-foreground: 240 4% 58%;
+  --accent: 215 20% 18%;
+  --accent-foreground: 210 20% 94%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5% 14%;
+  --input: 240 5% 14%;
+  --ring: 210 20% 65%;
+  --radius: 0.5rem;
+  --font-inter: Inter;
+  --font-jetbrains-mono: "JetBrains Mono";
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  background: #030304;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.26) 0%, rgba(3, 3, 4, 0) 340px),
+    radial-gradient(circle at 50% 0%, rgba(63, 63, 70, 0.22), transparent 34rem),
+    #030304;
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1, "tnum" 1;
+}
+
+::selection {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050506;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border: 2px solid #050506;
+  border-radius: 999px;
+}
+
+.terminal-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.markdown-body {
+  color: rgb(212 212 216);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: rgb(244 244 245);
+  font-weight: 700;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgb(39 39 42);
+}
+
+.markdown-body th,
+.markdown-body td {
+  border-bottom: 1px solid rgb(39 39 42);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+}
+
+.markdown-body th {
+  background: rgb(24 24 27 / 0.8);
+  color: rgb(244 244 245);
+}
+
+.markdown-body code {
+  border-radius: 4px;
+  background: rgb(24 24 27);
+  padding: 0.1rem 0.25rem;
+  color: rgb(226 232 240);
+}

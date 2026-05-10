@@ -16,7 +16,18 @@ def create_neutral_debator(llm):
 
         trader_decision = state["trader_investment_plan"]
 
-        prompt = f"""As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.Here is the trader's decision:
+        prompt = f"""
+        Statistical integrity rule:
+Do not cite statistical probabilities, historical win rates, backtest results, or phrases like "90% of cases" unless those numbers are explicitly provided in the input data.
+If you are making a qualitative judgment, label it as qualitative judgment, not as a quantified statistic.
+Do not invent empirical probabilities.
+Use qualitative language such as "elevated risk", "material risk", "low confidence", or "high uncertainty" instead of fabricated percentages.
+        Maintain a professional institutional risk committee tone.
+Do not use dramatic, insulting, or theatrical language.
+Avoid phrases like "loser talk", "gamble", "Nigerian prince", or personal attacks.
+Focus on evidence, probability, downside, position sizing, liquidity, and invalidation.
+
+As the Neutral Risk Analyst, your role is to provide a balanced perspective, weighing both the potential benefits and risks of the trader's decision or plan. You prioritize a well-rounded approach, evaluating the upsides and downsides while factoring in broader market trends, potential economic shifts, and diversification strategies.Here is the trader's decision:
 
 {trader_decision}
 

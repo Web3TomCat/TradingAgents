@@ -1,0 +1,23 @@
+{
+  "company_of_interest": "NVDA",
+  "trade_date": "2026-05-10",
+  "market_report": "## Trend Regime\n**Uptrend** - Price remains above rising moving averages with constructive pullback behavior.\n\n## Breakout / Pullback Quality\n**Orderly pullback** - Breakout quality is intact but new adds should wait for a retest.\n\n## Positioning Risk\n**Moderate** - The name is widely owned and positive news is well understood.\n\n## Chasing Risk\n**Elevated above resistance** - Better risk/reward appears near support.\n\n## Key Levels\n- **Resistance:** $1020\n- **Support:** $940, then $900\n- **Entry Zone:** $930-950\n- **Invalidation:** below $900",
+  "sentiment_report": "## Dominant Narrative\nThe market is trading a durable AI infrastructure demand story, but sentiment is crowded after a multi-week move.\n\n## Sentiment Direction\nImproving but decelerating.\n\n## Crowding / Positioning Risk\nElevated institutional ownership and retail attention create reversal risk if guidance disappoints.",
+  "news_report": "## Verified News\n- May 8, 2026: Management reiterated strong AI accelerator demand on the earnings call. Confidence: High.\n- May 9, 2026: Multiple brokers raised price targets after data center revenue commentary. Confidence: Medium-High.\n\n## Interpretation\n- The market appears to be pricing continued AI capex growth and resilient margins.\n\n## Low-Confidence Claims\n- Unconfirmed supply-chain chatter suggests lead times may normalize later this year.",
+  "fundamentals_report": "## Business Quality\nRevenue durability remains high due to data center demand, software attach and ecosystem scale. Margin trend is positive but expectations are demanding. Cash generation is strong and balance sheet risk is low. Valuation expectations remain elevated.",
+  "investment_debate_state": {
+    "bull_history": "## Core Thesis\nAI infrastructure demand remains structurally durable and operating leverage can continue.\n\n- AWS, cloud and enterprise AI demand support revenue visibility.\n- Margin expansion can persist if supply normalizes.\n- Product cycle remains a catalyst.",
+    "bear_history": "## Core Thesis\nThe setup is crowded and valuation leaves little room for execution error.\n\n- The market is pricing sustained hyper-growth.\n- Gross margin disappointment would reset expectations.\n- Invalidation is a close below support.",
+    "judge_decision": "The committee views the bull case as structurally stronger, but near-term entry discipline matters.",
+    "count": 1
+  },
+  "trader_investment_plan": "**Action**: Hold\n\n**Position Sizing**: Maintain current weight. Add only near $930-950.\n\nFINAL TRANSACTION PROPOSAL: **HOLD**",
+  "risk_debate_state": {
+    "judge_decision": "Risk committee recommends maintaining current exposure, using $900 as invalidation and avoiding adds above resistance.",
+    "aggressive_history": "Upside remains attractive if AI demand accelerates, but volatility risk is high.",
+    "neutral_history": "Balanced risk/reward with better entry near support.",
+    "conservative_history": "Valuation, macro and crowding risk argue for strict sizing.",
+    "count": 1
+  },
+  "final_trade_decision": "**Rating**: Hold\n\n**Executive Summary**: Maintain current exposure and avoid adding above resistance. Use the $930-950 entry zone for incremental adds if the stock pulls back.\n\n**Investment Thesis**: Business quality is high and the AI infrastructure narrative remains intact, but expectations are elevated and the tactical setup is not under-owned.\n\n**Time Horizon**: 3-6 months"
+}
