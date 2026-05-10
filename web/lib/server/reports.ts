@@ -58,8 +58,14 @@ export async function getDashboardData(selectedId?: string) {
 }
 
 async function findOutputsDir() {
+  const bundledReportsDir = path.resolve(process.cwd(), "data/reports");
+
+  if (process.env.VERCEL) {
+    return bundledReportsDir;
+  }
+
   const candidates = [
-    path.resolve(process.cwd(), "data/reports"),
+    bundledReportsDir,
     path.resolve(process.cwd(), "outputs"),
     path.resolve(process.cwd(), "../outputs"),
     path.resolve(process.cwd(), "../../outputs")

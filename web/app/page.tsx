@@ -1,8 +1,6 @@
 import { ResearchDashboard } from "@/components/dashboard/research-dashboard";
 import { getDashboardData } from "@/lib/server/reports";
 
-export const dynamic = "force-dynamic";
-
 export default async function Page() {
   const data = await getDashboardData();
 
