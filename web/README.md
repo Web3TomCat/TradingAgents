@@ -10,11 +10,13 @@ npm install
 npm run dev
 ```
 
-The app reads JSON reports from the repository-level `outputs/` directory:
+The app first reads bundled JSON reports from `web/data/reports/`, which is suitable for Vercel deployments:
 
 ```text
-outputs/XXX_YYYY-MM-DD_YYYYMMDD_HHMMSS_state.json
+web/data/reports/XXX_YYYY-MM-DD_YYYYMMDD_HHMMSS_state.json
 ```
+
+If that directory is missing locally, it falls back to the repository-level `outputs/` directory.
 
 It also supports browser-side local JSON loading from the header.
 
@@ -24,6 +26,6 @@ It also supports browser-side local JSON loading from the header.
 - `components/dashboard/` - institutional research dashboard sections, charts, actions and local loader.
 - `components/ui/` - shadcn-style primitives used by the dashboard.
 - `lib/parsers/` - robust Markdown and semi-structured report extractors.
-- `lib/server/reports.ts` - server-side discovery and parsing of `outputs/*_state.json`.
+- `lib/server/reports.ts` - server-side discovery and parsing of bundled or local `*_state.json` files.
 - `lib/types.ts` - strict TypeScript contracts for raw and parsed report data.
 - `data/mock-tradingagents-state.json` - compact example input.

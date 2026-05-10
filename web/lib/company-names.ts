@@ -1,0 +1,43 @@
+export const COMPANY_NAMES: Record<string, string> = {
+  AAPL: "Apple Inc.",
+  ABBV: "AbbVie Inc.",
+  ABNB: "Airbnb, Inc.",
+  ADBE: "Adobe Inc.",
+  AMD: "Advanced Micro Devices, Inc.",
+  AMZN: "Amazon.com, Inc.",
+  AVGO: "Broadcom Inc.",
+  BA: "The Boeing Company",
+  BABA: "Alibaba Group Holding Limited",
+  BAC: "Bank of America Corporation",
+  BRK: "Berkshire Hathaway Inc.",
+  COST: "Costco Wholesale Corporation",
+  CRM: "Salesforce, Inc.",
+  DIS: "The Walt Disney Company",
+  GOOGL: "Alphabet Inc.",
+  GOOG: "Alphabet Inc.",
+  HD: "The Home Depot, Inc.",
+  INTC: "Intel Corporation",
+  JPM: "JPMorgan Chase & Co.",
+  KO: "The Coca-Cola Company",
+  MA: "Mastercard Incorporated",
+  META: "Meta Platforms, Inc.",
+  MSFT: "Microsoft Corporation",
+  NFLX: "Netflix, Inc.",
+  NVDA: "NVIDIA Corporation",
+  ORCL: "Oracle Corporation",
+  PFE: "Pfizer Inc.",
+  PG: "The Procter & Gamble Company",
+  PLTR: "Palantir Technologies Inc.",
+  PYPL: "PayPal Holdings, Inc.",
+  QCOM: "QUALCOMM Incorporated",
+  SHOP: "Shopify Inc.",
+  TSLA: "Tesla, Inc.",
+  UNH: "UnitedHealth Group Incorporated",
+  V: "Visa Inc.",
+  WMT: "Walmart Inc.",
+  XOM: "Exxon Mobil Corporation"
+};
+
+export function companyNameForTicker(ticker: string) {
+  return COMPANY_NAMES[ticker.toUpperCase()] ?? `${ticker.toUpperCase()} Equity`;
+}
